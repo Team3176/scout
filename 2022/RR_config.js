@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "title":"Scouting PASS 2022",
+  "title":"Scouting3176 2022",
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022flwp",
+        "defaultValue":"2022inkok",
         "required":"true",
         "disabled":"true"
       },
