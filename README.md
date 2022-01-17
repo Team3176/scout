@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# Scouting P.A.S.S.
+# 
 
 #### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
 
