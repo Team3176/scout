@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022incol",
+        "defaultValue":"2022inwla",
         "required":"true",
         "disabled":"true"
       },
