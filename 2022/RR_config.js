@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022inwla",
+        "defaultValue":"2022incmp",
         "required":"true",
         "disabled":"true"
       },
@@ -52,7 +52,7 @@ var config_data = `
         "required":"true"
       },
       "Team #": {
-        "code":"t",
+        "code":"dt",
         "type":"team",
         "min":1,
         "max":99999
@@ -117,6 +117,12 @@ var config_data = `
         "title": "Was Defended",
         "type":"bool"
       },
+      "Team # that Defended them": {
+        "code":"t",
+        "type":"team",
+        "min":1,
+        "max":99999
+      },
       "Cargo Loading": {
         "code":"cl",
         "title": "Pick up Cargo where",
@@ -150,6 +156,16 @@ var config_data = `
           "x":"Not Attempted"
         },
         "defaultValue":"x"
+      },
+      "Climbed on Inner or Outer side?" : {
+        "code":"cs",
+        "title":"Climb Side",
+        "type":"radio",
+        "choices":{
+          "1":"Inner<br>",
+          "2":"Outer<br>",
+          "x":"Did not climb"
+        }
       },
       "Started Climb before Endgame": {
         "code":"be",
