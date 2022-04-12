@@ -165,7 +165,8 @@ var config_data = `
           "1":"Inner<br>",
           "2":"Outer<br>",
           "x":"Did not climb"
-        }
+        },
+        "defaultValue":"x"
       },
       "Started Climb before Endgame": {
         "code":"be",
