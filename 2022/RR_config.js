@@ -52,7 +52,7 @@ var config_data = `
         "required":"true"
       },
       "Team #": {
-        "code":"dt",
+        "code":"t",
         "type":"team",
         "min":1,
         "max":99999
@@ -118,7 +118,7 @@ var config_data = `
         "type":"bool"
       },
       "Team # that Defended them": {
-        "code":"t",
+        "code":"dt",
         "type":"team",
         "min":1,
         "max":99999
