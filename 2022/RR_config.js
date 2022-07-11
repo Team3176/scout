@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022incmp",
+        "defaultValue":"2022iri",
         "required":"true",
         "disabled":"true"
       },
