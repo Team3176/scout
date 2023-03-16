@@ -11,10 +11,19 @@ var config_data = `
       "maxSize": 5,
       "required": "true"
     },
+    { "name": "Varsity or JV",
+    "code": "vjv",
+      "type":"radio",
+      "choices": {
+        "0": "Junior Varsity<br>",
+        "1": "Varsity<br>"
+      },
+      "defaultValue": "0"
+    },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023inmish",
+      "defaultValue": "2023inwla",
       "required": "true",
       "disabled": "true"
     },
@@ -75,35 +84,23 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "type": "bool"
-    },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
-    },
     { "name": "Mobility?",
       "code": "am",
       "type": "bool"
     },
-    { "name": "Docked",
+    { "name": "Charge Station",
       "code": "ad",
       "type":"radio",
       "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+        "1": "Docked (not Engaged)<br>",
+        "2": "Engaged<br>",
+        "-1": "Attempted but failed<br>",
+        "0": "Not attempted<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
-    },
     { "name": "Grid Scoring",
       "code": "tsg",
       "type": "clickable_image",
@@ -116,7 +113,7 @@ var config_data = `
       "shape": "circle 12 black red true",
       "cycleTimer": "tct"
     },
-    { "name": "Feeder Count<br>(Fed another bot)",
+    { "name": "Shuttled Game Pieces<br>(Fed another bot)",
       "code": "tfc",
       "type": "counter"
     },
@@ -140,30 +137,63 @@ var config_data = `
       "code": "fpu",
       "type": "radio",
       "choices": {
-        "1": "Cones<br>",
-        "2": "Cubes<br>",
+        "2": "Cones<br>",
+        "1": "Cubes<br>",
         "3": "Both<br>",
-        "0": "Not Attempted"
+        "0": "Not Attempted<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
+    },
+    { "name": "Single Substation Pickup",
+      "code": "spu",
+      "type": "radio",
+      "choices": {
+        "2": "Cones<br>",
+        "1": "Cubes<br>",
+        "3": "Both<br>",
+        "0": "Not Attempted<br>"
+      },
+      "defaultValue": "0"
+    },
+    { "name": "Double Substation Pickup",
+      "code": "dpu",
+      "type": "radio",
+      "choices": {
+        "2": "Cones<br>",
+        "1": "Cubes<br>",
+        "3": "Both<br>",
+        "0": "Not Attempted<br>"
+      },
+      "defaultValue": "0"
+    },
+    { "name": "Died/Immobilized",
+      "code": "die",
+      "type": "bool"
+    },
+    { "name": "More than 2 tech fouls?",
+      "code": "ttf",
+      "type": "bool"
+    },
+    { "name": "Yellow Card?",
+      "code": "yc",
+      "type": "bool"
+    },
+    { "name": "Red Card?",
+      "code": "rc",
+      "type": "bool"
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "type": "timer"
-    },
-    { "name": "Final Status",
+    { "name": "Charge Station",
       "code": "fs",
       "type":"radio",
       "choices": {
-        "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+        "1": "Docked (Not Engaged)<br>",
+        "2": "Engaged<br>",
+        "-1": "Attempted but failed<br>",
+        "0": "Not attempted<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Total # of alliance<br>robots docked/engaged",
       "code": "dn",
@@ -178,29 +208,21 @@ var config_data = `
         "0": "Not Effective<br>",
         "1": "Average<br>",
         "2": "Very Effective<br>",
-        "-1": "Not Observed"
+        "-1": "Not Observed<br>"
       },
-      "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
+      "defaultValue": "-1"
     },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "Below Average<br>",
+        "2": "Average<br>",
+        "3": "Good<br>",
+        "4": "Excellent<br>",
+        "0": "Did not play defense<br>"
       },
-      "defaultValue": "x"
-    },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
+      "defaultValue": "0"
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -210,25 +232,29 @@ var config_data = `
         "2": "2<br>",
         "3": "3<br>",
         "4": "4<br>",
-        "5": "5 (fast)"
+        "5": "5 (fast)<br>"
       },
       "defaultValue":"3"
     },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
-    },
+    { "name": "Driver was:",
+      "code": "drc",
+      "type": "radio",
+      "choices": {
+        "0": "Reckless<br>",
+        "1": "Cautious<br>"
+      },
+      "defaultValue":"1"
+    },       
     { "name": "Tippy<br>(almost tipped over)",
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
+    { "name": "Tipped over",
+      "code": "tpd",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
+    { "name": "Dropped Cones (>2)<br>(when not trying to score)",
+      "code": "dc",
       "type": "bool"
     },
     { "name": "Comments",
