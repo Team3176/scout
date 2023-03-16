@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# Scouting P.A.S.S.
+# 
 
 #### A scouting system for FIRST FRC competitions building off dev by Team #2451.
 
