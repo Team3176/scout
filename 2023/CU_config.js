@@ -84,7 +84,7 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Mobility?",
+    { "name": "Exited Community?",
       "code": "am",
       "type": "bool"
     },
@@ -92,9 +92,9 @@ var config_data = `
       "code": "ad",
       "type":"radio",
       "choices": {
-        "1": "Docked (not Engaged)<br>",
-        "2": "Engaged<br>",
-        "-1": "Attempted but failed<br>",
+        "1": "Docked (not Engaged)(Not Balanced)<br>",
+        "2": "Engaged (Balanced)<br>",
+        "-1": "Attempted but failed (Fell off at end)<br>",
         "0": "Not attempted<br>"
       },
       "defaultValue": "0"
@@ -165,6 +165,14 @@ var config_data = `
       },
       "defaultValue": "0"
     },
+    { "name": "Crosses Charge Station<br>to Enter/Exit Community?<br>",
+      "code": "tcs",
+      "type": "bool"
+    },
+    { "name": "Caused Traffic Jam<br>(Got in the way)",
+      "code": "ttj",
+      "type": "counter"
+    },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
@@ -187,9 +195,9 @@ var config_data = `
       "code": "fs",
       "type":"radio",
       "choices": {
-        "1": "Docked (Not Engaged)<br>",
-        "2": "Engaged<br>",
-        "-1": "Attempted but failed<br>",
+        "1": "Docked (not Engaged)(Not Balanced)<br>",
+        "2": "Engaged (Balanced)<br>",
+        "-1": "Attempted but failed (Fell off at end)<br>",
         "0": "Not attempted<br>"
       },
       "defaultValue": "0"
