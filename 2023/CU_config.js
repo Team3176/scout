@@ -84,6 +84,10 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
+    { "name": "Attempted to place Cube/Cone but missed",
+      "code" : "afl",
+      "type" : "counter"
+    },
     { "name": "Exited Community?",
       "code": "am",
       "type": "bool"
@@ -112,6 +116,14 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
+    { "name": "Attempted to place Cube/Cone but missed",
+      "code" : "tfl",
+      "type" : "counter"
+    },
+    { "name": "Dropped Cones (>2)<br>(when crossing field)",
+      "code": "dc",
+      "type": "bool"
+    },
     { "name": "Shuttled Game Pieces<br>(Fed another bot)",
       "code": "tfc",
       "type": "counter"
@@ -119,14 +131,6 @@ var config_data = `
     { "name": "Was Fed<br>Game Pieces",
       "code": "wf",
       "type": "bool"
-    },
-    { "name": "Was Defended",
-      "code": "wd",
-      "type": "bool"
-    },
-    { "name": "Who Defended this bot",
-      "code": "who",
-      "type": "text"
     },
     { "name": "Smart Placement<br>(creates Links)",
       "code": "lnk",
@@ -169,7 +173,7 @@ var config_data = `
       "code": "tcs",
       "type": "bool"
     },
-    { "name": "Caused Traffic Jam<br>(Got in the way)",
+    { "name": "Caused Traffic Jam<br>(Got in the way of Alliance partner)",
       "code": "ttj",
       "type": "counter"
     },
@@ -177,7 +181,7 @@ var config_data = `
       "code": "die",
       "type": "bool"
     },
-    { "name": "More than 2 tech fouls?",
+    { "name": "More than 2 fouls?",
       "code": "ttf",
       "type": "bool"
     },
@@ -208,6 +212,14 @@ var config_data = `
     }
   ],
   "postmatch": [
+    { "name": "Was Defended",
+      "code": "wd",
+      "type": "bool"
+    },
+    { "name": "Who Defended this bot",
+      "code": "who",
+      "type": "text"
+    }, 
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
@@ -215,9 +227,14 @@ var config_data = `
         "0": "Not Effective<br>",
         "1": "Average<br>",
         "2": "Very Effective<br>",
-        "-1": "Not Observed<br>"
       },
       "defaultValue": "-1"
+    },
+    { "name" : "Comment on Driver skill",
+      "code": "dsc",
+      "type": "text",
+      "size": 15,
+      "maxSize": 25
     },
     { "name": "Defense Rating",
       "code": "dr",
@@ -235,20 +252,15 @@ var config_data = `
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)<br>"
+        "1": "Slow<br>",
+        "2": "Average<br>",
+        "3": "Fast<br>",
       },
       "defaultValue":"3"
     },
-    { "name": "Driver was:",
+    { "name": "Was Driver Reckless:",
       "code": "drc",
-      "type": "radio",
-      "choices": {
-        "0": "Reckless<br>",
-        "1": "Cautious<br>"
+      "type": "bool"
       },
       "defaultValue":"1"
     },       
@@ -259,11 +271,7 @@ var config_data = `
     { "name": "Tipped over",
       "code": "tpd",
       "type": "bool"
-    },
-    { "name": "Dropped Cones (>2)<br>(when not trying to score)",
-      "code": "dc",
-      "type": "bool"
-    },
+    }, 
     { "name": "Comments",
       "code": "co",
       "type": "text",
