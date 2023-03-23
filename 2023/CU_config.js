@@ -92,7 +92,7 @@ var config_data = `
 			"shape": "circle 12 black red true"
 		},
 		{
-			"name": "Attempted to place Cube/Cone but missed",
+			"name": "Attempted to place<br>Cube/Cone but missed",
 			"code": "afl",
 			"type": "counter"
 		},
@@ -127,7 +127,7 @@ var config_data = `
 			"shape": "circle 12 black red true"
 		},
 		{
-			"name": "Attempted to place Cube/Cone but missed",
+			"name": "Attempted to place<br>Cube/Cone but missed",
 			"code": "tfl",
 			"type": "counter"
 		},
