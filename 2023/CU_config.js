@@ -193,7 +193,7 @@ var config_data = `
 			"type": "bool"
 		},
 		{
-			"name": "Caused Traffic Jam<br>(Got in the way of Alliance partner)",
+			"name": "Caused Traffic Jam<br>(Got in the way<br>of Alliance partner)",
 			"code": "ttj",
 			"type": "counter"
 		},
