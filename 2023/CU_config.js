@@ -71,12 +71,15 @@ var config_data = `
 			"max": 99999
 		},
 		{
-			"name": "Auto Start Position",
+			"name": "Auton Start Position",
 			"code": "as",
-			"type": "clickable_image",
-			"filename": "2023/field_image.png",
-			"clickRestriction": "one",
-			"shape": "circle 5 black red true"
+			"type": "radio",
+			"choices": {
+				"br": "Barrier",
+				"c": "Center",
+				"w": "Wall/Wire"
+			},
+			"required": "true"
 		}
 	],
 	"auton": [{
@@ -92,10 +95,17 @@ var config_data = `
 			"shape": "circle 12 black red true"
 		},
 		{
-			"name": "Attempted to place<br>Cube/Cone but missed",
-			"code": "afl",
-			"type": "counter"
-		},
+            "name": "Failed placement",
+            "code": "asgf",
+            "type": "clickable_image",
+            "filename": "2023/grid_image.png",
+            "dimensions": "9 4",
+            "clickRestriction": "onePerBox",
+            "toggleClick": "true",
+            "showFlip": "false",
+            "showUndo": "false",
+            "shape": "circle 12 black blue true"
+        },
 		{
 			"name": "Exited Community?",
 			"code": "am",
@@ -139,12 +149,7 @@ var config_data = `
             "shape": "circle 12 black blue true"
         },
 		{
-			"name": "Attempted to place<br>Cube/Cone but missed",
-			"code": "tfl",
-			"type": "counter"
-		},
-		{
-			"name": "Dropped Cones (>2)<br>(when crossing field)",
+			"name": "Dropped Cones or Cubes (>2)<br>(when crossing field)",
 			"code": "dc",
 			"type": "bool"
 		},
@@ -152,16 +157,6 @@ var config_data = `
 			"name": "Shuttled Game Pieces<br>(Fed another bot)",
 			"code": "tfc",
 			"type": "counter"
-		},
-		{
-			"name": "Was Fed<br>Game Pieces",
-			"code": "wf",
-			"type": "bool"
-		},
-		{
-			"name": "Smart Placement<br>(creates Links)",
-			"code": "lnk",
-			"type": "bool"
 		},
 		{
 			"name": "Floor Pickup",
@@ -208,26 +203,6 @@ var config_data = `
 			"name": "Caused Traffic Jam<br>(Got in the way<br>of Alliance partner)",
 			"code": "ttj",
 			"type": "counter"
-		},
-		{
-			"name": "Died/Immobilized",
-			"code": "die",
-			"type": "bool"
-		},
-		{
-			"name": "More than 2 fouls?",
-			"code": "ttf",
-			"type": "bool"
-		},
-		{
-			"name": "Yellow Card?",
-			"code": "yc",
-			"type": "bool"
-		},
-		{
-			"name": "Red Card?",
-			"code": "rc",
-			"type": "bool"
 		}
 	],
 	"endgame": [{
@@ -248,16 +223,7 @@ var config_data = `
 			"type": "counter"
 		}
 	],
-	"postmatch": [{
-			"name": "Was Defended",
-			"code": "wd",
-			"type": "bool"
-		},
-		{
-			"name": "Who Defended this bot",
-			"code": "who",
-			"type": "text"
-		},
+	"postmatch": [
 		{
 			"name": "Driver Skill",
 			"code": "ds",
@@ -281,10 +247,8 @@ var config_data = `
 			"code": "dr",
 			"type": "radio",
 			"choices": {
-				"1": "Below Average<br>",
-				"2": "Average<br>",
-				"3": "Good<br>",
-				"4": "Excellent<br>",
+				"1": "Average<br>",
+				"2": "Good<br>",
 				"0": "Did not play defense<br>"
 			},
 			"defaultValue": "0"
@@ -301,13 +265,18 @@ var config_data = `
 			"defaultValue": "3"
 		},
 		{
-			"name": "Was Driver Reckless:",
+			"name": "Was Driver Reckless<br> or many fouls (>2):",
 			"code": "drc",
 			"type": "bool"
 		},
 		{
 			"name": "Tippy<br>(almost tipped over)",
 			"code": "tip",
+			"type": "bool"
+		},
+		{
+			"name": "Died/Immobilized",
+			"code": "die",
 			"type": "bool"
 		},
 		{
