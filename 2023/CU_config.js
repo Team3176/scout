@@ -126,6 +126,18 @@ var config_data = `
 			"showUndo": "false",
 			"shape": "circle 12 black red true"
 		},
+        {
+            "name": "Failed placement",
+            "code": "fail",
+            "type": "clickable_image",
+            "filename": "2023/grid_image.png",
+            "dimensions": "9 4",
+            "clickRestriction": "onePerBox",
+            "toggleClick": "true",
+            "showFlip": "false",
+            "showUndo": "false",
+            "shape": "circle 12 black blue true"
+        },
 		{
 			"name": "Attempted to place<br>Cube/Cone but missed",
 			"code": "tfl",
