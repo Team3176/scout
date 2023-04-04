@@ -25,7 +25,7 @@ var config_data = `
 			"name": "Event",
 			"code": "e",
 			"type": "event",
-			"defaultValue": "2023inwla",
+			"defaultValue": "2023incmp",
 			"required": "true",
 			"disabled": "true"
 		},
@@ -96,7 +96,7 @@ var config_data = `
 		},
 		{
             "name": "Failed placement",
-            "code": "asgf",
+            "code": "afl",
             "type": "clickable_image",
             "filename": "2023/grid_image.png",
             "dimensions": "9 4",
@@ -110,6 +110,27 @@ var config_data = `
 			"name": "Exited Community?",
 			"code": "am",
 			"type": "bool"
+		},
+		{
+			"name": "Extra <b>Cone</b> <br> Pickup",
+			"code": "acu",
+			"type": "counter"
+		},
+		{
+			"name": "Extra <b>Cube</b> <br> Pickup",
+			"code": "aco",
+			"type": "counter"
+		},
+		{
+			"name": "Extra Game Piece <br> Successful?",
+			"code": "aex",
+			"type": "radio",
+			"choices": {
+				"1": "Successful<br>",
+				"-1": "Attempted but failed<br>",
+				"0": "Not attempted<br>"
+			},
+			"defaultValue": "0"
 		},
 		{
 			"name": "Charge Station",
