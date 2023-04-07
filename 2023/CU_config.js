@@ -79,6 +79,7 @@ var config_data = `
 				"c": "Center",
 				"w": "Wall/Wire"
 			},
+			"defaultValue": "br",
 			"required": "true"
 		}
 	],
